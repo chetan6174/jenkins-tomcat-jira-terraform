@@ -33,7 +33,7 @@ connection {
     type         = "ssh"
         host         = self.public_ip
             user         = "ec2-user"
-                private_key  = file("/root/jenkins-tomcat-jira-terraform/chetan.pem" )
+                private_key  = file("/root/jenkins-tomcat-jira-terraform/" )
                    }
   tags = {
     "Name" = "Tomcat_conf"
@@ -66,7 +66,7 @@ connection {
     type         = "ssh"
         host         = self.public_ip
             user         = "ec2-user"
-                private_key  = file("/root/jenkins-tomcat-jira-terraform/chetan.pem" )
+                private_key  = file("/root/jenkins-tomcat-jira-terraform/" )
                    }
   tags = {
     "Name" = "Jenkins_conf"
@@ -90,7 +90,7 @@ connection {
     type         = "ssh"
         host         = self.public_ip
             user         = "ec2-user"
-                private_key  = file("/root/jenkins-tomcat-jira-terraform/chetan.pem" )
+                private_key  = file("/root/jenkins-tomcat-jira-terraform/" )
                    }
   tags = {
     "Name" = "Jira_conf"
