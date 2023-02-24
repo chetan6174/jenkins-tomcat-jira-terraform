@@ -6,15 +6,15 @@ terraform {
   }
 }
 provider "aws"{
-access_key= "*******"
-secret_key= "*****"
+access_key= "AKIAW456GZ2JAEKD2HGW"
+secret_key= "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"
 region= "ap-south-1"
 }
 
 resource "aws_instance" "Tomcat_conf" {
   ami           = "ami-0e742cca61fb65051"
   instance_type = "t2.micro"
-key_name= "******"
+key_name= "chetan.pem"
 vpc_security_group_ids      = ["${aws_security_group.vpc_conf.id}"]
 provisioner "file" {
     source      = "conf.sh"
@@ -33,7 +33,7 @@ connection {
     type         = "ssh"
         host         = self.public_ip
             user         = "ec2-user"
-                private_key  = file("/root/task1/*****" )
+                private_key  = file("/root/jenkins-tomcat-jira-terraform/chetan.pem" )
                    }
   tags = {
     "Name" = "Tomcat_conf"
@@ -66,7 +66,7 @@ connection {
     type         = "ssh"
         host         = self.public_ip
             user         = "ec2-user"
-                private_key  = file("/root/task1/*****" )
+                private_key  = file("/root/jenkins-tomcat-jira-terraform/chetan.pem" )
                    }
   tags = {
     "Name" = "Jenkins_conf"
@@ -90,7 +90,7 @@ connection {
     type         = "ssh"
         host         = self.public_ip
             user         = "ec2-user"
-                private_key  = file("/root/task1/****" )
+                private_key  = file("/root/jenkins-tomcat-jira-terraform/chetan.pem" )
                    }
   tags = {
     "Name" = "Jira_conf"
